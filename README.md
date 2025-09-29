@@ -33,7 +33,7 @@ python -m fiducial_system.tools.calibrate --output config/camera_intrinsics.yaml
 ```
 4. Print tags for testing:
 ```bash
-python -m fiducial_system.tools.generate_tags --ids 1 2 3 4 5 --size_mm 80 --out tags/
+ python -m fiducial_system.tools.generate_tags --family 36h11 --ids 0-5 --size 1772 --label --outdir .\apriltags_out --sheet --cols 3 --rows 2 --dpi 300 --sheet_width_mm 210 --sheet_height_mm 297
 ```
 5. Capture baseline poses:
 ```bash

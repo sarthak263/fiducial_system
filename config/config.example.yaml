@@ -7,7 +7,7 @@ camera_intrinsics: "config/camera_intrinsics.yaml"
 
 apriltag:
   family: "tag36h11"
-  tag_size_m: 0.08
+  tag_size_m: 0.150
   nthreads: 4
   refine_edges: true
   decode_sharpening: 0.25
