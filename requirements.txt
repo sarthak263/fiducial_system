@@ -1,0 +1,12 @@
+numpy
+opencv-contrib-python>=4.10
+pupil-apriltags>=1.0.4
+PyYAML>=6.0.2
+reportlab>=4.2.2
+requests>=2.32
+scipy>=1.13
+
+# For generating tag images
+pyapriltags
+Pillow>=10.4
+

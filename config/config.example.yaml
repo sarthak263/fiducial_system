@@ -1,0 +1,59 @@
+rtsp_url: "rtsp://user:pass@camera-ip/stream"
+frame_grab:
+  attempts: 3
+  delay_ms: 400
+
+camera_intrinsics: "config/camera_intrinsics.yaml"
+
+apriltag:
+  family: "tag36h11"
+  tag_size_m: 0.08
+  nthreads: 4
+  refine_edges: true
+  decode_sharpening: 0.25
+
+objects:
+  world:
+    tag_ids: [101, 102, 103]
+  table:
+    tag_ids: [201, 202, 203]
+  hotel:
+    tag_ids: [301, 302]
+  camera:
+    tag_ids: [901, 902]
+
+thresholds:
+  hotel_vs_table:
+    translation_mm: 3.0
+    rotation_deg: 0.5
+  table_vs_world:
+    translation_mm: 8.0
+    rotation_deg: 1.5
+  camera_vs_world:
+    translation_mm: 2.0
+    rotation_deg: 0.3
+
+policy:
+  consecutive_violations: 2
+  min_visible_tags_per_group: 1
+  min_visible_world_tags: 2
+
+output:
+  baseline_file: "config/baseline.yaml"
+  events_log: "logs/events.log"
+  snapshots_dir: "logs/snapshots"
+
+notify:
+  console: true
+  email:
+    enabled: false
+    smtp_host: "smtp.example.com"
+    smtp_port: 587
+    username: ""
+    password: ""
+    from_addr: ""
+    to_addrs: ["lab-alerts@example.com"]
+  slack:
+    enabled: false
+    webhook_url: "https://hooks.slack.com/services/XXX/YYY/ZZZ"
+
